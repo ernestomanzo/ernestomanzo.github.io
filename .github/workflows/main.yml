@@ -1,0 +1,34 @@
+
+
+name: CI
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: test location of index
+        run: ls
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install rmarkdown, remotes, and the local package
+        run: Rscript -e 'install.packages("postcards")'
+      - name: render
+        run: Rscript -e 'rmarkdown::render("index.Rmd")'
+      - name: move output
+        run: |
+          mkdir public/
+          mv *.html *.jpg public/
+          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.TOKEN }}
+          external_repository: ernestomanzo/ernestomanzo.github.io
+          publish_dir: ./public
+          #   keep_files: true
+          user_name: ernestomanzo
+          user_email: email@website.com
+          publish_branch: gh-pages
+            #cname: website.com
+

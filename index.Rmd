@@ -1,0 +1,34 @@
+---
+title: "Ernesto Manzo"
+image: "ernesto.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/ernesto-manzo-52899338"
+  - label: Twitter
+    url: "https://twitter.com/ErnestoFlyguy"
+  - label: GitHub
+    url: "https://github.com/ernestomanzo"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::trestles
+---
+
+## Bio
+
+Ernesto Manzo studies neurodegeneration with drosophila models.
+
+## Education
+
+**University of Arizona** | Tucson, AZ
+
+Ph.D. in Molecular Biology | 2013 - 2019
+
+**Swarthmore College** | Swarthmore, PA
+
+B.S. in Biology | 2007 - 2011
+
+## Experience
+
+**Oregon Health & Science University** | Postdoctoral Scholar | August 2019 - Present
+
